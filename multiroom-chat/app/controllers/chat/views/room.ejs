@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Room [<%- roomName %>]</title>
+
+	<link rel="stylesheet" href="/css/chat.css">
+
+	<script src="/js/jquery.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		$(function() {
+
+			var roomName = '<%- roomName %>',
+				userName,
+				chat = io.connect('//localhost'),
+				messages = $('#messages #chatMessages'),
+				inputBox = $('#messageBox form input');
+
+			chat.on('message', function (data) {
+				messages.append('<div class="message"><b>' + data.from + '</b>: ' + data.message + '</div>');
+			});
+
+			chat.on('register', function(data) {
+
+				if(typeof data.userName === 'undefined') {
+					userName = prompt('Your name:');
+					while(!userName.trim()) {
+						userName = prompt('Your name:');
+					}
+				}
+				else {
+					userName = data.userName;
+				}
+
+				chat.emit('register', {
+					userName: userName,
+					roomName: roomName
+				});
+			});
+
+			var sendMessage = function(e) {
+				var message = inputBox.val().trim();
+
+				//Sanitizes the output
+				message = message.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+				if(message !== '') {
+					chat.emit('message', {
+						room: roomName,
+						from: userName,
+						message: message
+					});
+
+					messages.append('<div class="message"><b>' + userName + '</b>: ' + message + '</div>');
+				}
+
+				inputBox.val('');
+
+				e.preventDefault();
+			};
+
+			$('#messageBox form').on('submit', sendMessage);
+		});
+	</script>
+</head>
+<body>
+
+	<div id="messages">
+		<div id="chatMessages">
+			
+		</div>
+	</div>
+	<div id="messageBox">
+		<form>
+			<input type="text">
+			<button type="submit">Send</button>
+		</form>
+	</div>
+
+	<div id="rhapsody">
+		
+	</div>
+
+</body>
+</html>

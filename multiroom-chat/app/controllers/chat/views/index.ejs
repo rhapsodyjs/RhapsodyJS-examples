@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiroom chat with RhapsodyJS</title>
+
+  <link rel="stylesheet" href="/css/chat.css">
+
+  <script>
+    var createRoom = function() {
+      var roomName = prompt('Room name:');
+
+      roomName = roomName.trim();
+      if(roomName !== '') {
+        window.location.href = '/room/' + roomName;
+      }
+      else {
+        alert('Invalid name!');
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content">
+    <% if(Object.keys(rooms).length > 0) { %>
+      <h2>Rooms</h2>
+      <div id="rooms">
+        <% for(var room in rooms) {
+            if(room.trim().length > 0) { %>
+              <div class="room"><a href="/room<%- room %>"><%- room.substring(1, room.length) %></a></div>
+        <% }
+        } %>
+      </div>
+    <% } else { %>
+      <h2>No rooms created yet.</h2>
+    <% } %>
+
+    <button onclick="createRoom()">Create a new room</button>
+  </div>
+</body>
+</html>

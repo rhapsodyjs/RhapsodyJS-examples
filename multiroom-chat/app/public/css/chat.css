@@ -1,0 +1,114 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  font-size: 15px;
+}
+
+button {
+  min-width: 50px;
+  height: 27px;
+  border-radius: 3px;
+  border: 1px solid #AAA;
+  background: #EEE;
+}
+
+button:hover {
+  background: #DDD;
+}
+
+button:active {
+  background: #BBB;
+}
+
+/*********  Index *********/
+
+#content {
+  margin: 100px auto;
+  width: 500px;
+  text-align: center;
+  background: linear-gradient(to bottom, #cfe7fa 0%,#6393c1 100%);
+  padding: 10px;
+  border-radius: 3px;
+}
+
+#rooms {
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  padding: 0 1px;
+  margin: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.room {
+  height: 20px;
+  background: #EFEFEF;
+  border-radius: 3px;
+  margin: 1px 0;
+}
+
+/*********  Chat room *********/
+
+#messages {
+  position: absolute;
+  top: 0;
+  bottom: 90px;
+  left: 0;
+  width: 349px;
+  border-right: 1px solid #DDD;
+
+  overflow-y: auto;
+}
+
+#chatMessages {
+  padding: 5px;
+}
+
+.message {
+  border-bottom: 1px solid #EFEFEF;
+  padding: 3px;
+  margin: 5px;
+}
+
+#messageBox {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 90px;
+  width: 350px;
+  display: table;
+  background: linear-gradient(to bottom, #cfe7fa 0%,#6393c1 100%);
+  text-align: center;
+}
+
+#messageBox form {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+#messageBox form input {
+  width: 260px;
+  height: 21px;
+  border-radius: 3px;
+  border: 1px solid #AAA;
+  padding: 2px;
+}
+
+#rhapsody {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 350px;
+  right: 0;
+  background: url(https://cloud.githubusercontent.com/assets/4325587/2675412/53a4b692-c118-11e3-8147-2f7d99355ae5.png) no-repeat center center;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "multiroom-chat",
+  "main": "app",
+  "dependencies": {
+    "rhapsody": ">=0.1.4-beta",
+    "ejs": "^0.8.5"
+  }
+}
