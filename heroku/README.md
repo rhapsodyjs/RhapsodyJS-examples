@@ -6,3 +6,5 @@ To deploy a RhapsodyJS app to Heroku is really easy, you just need to:
 * Create a `Procfile`, with the command `web: node ./app.js`
 
 After that, you can deploy it normally like any Heroku app ! =)
+
+You can see it running here [http://heroku-rhapsody.herokuapp.com/](http://heroku-rhapsody.herokuapp.com/)
