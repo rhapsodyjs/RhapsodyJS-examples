@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login with RhapsodyJS</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+  <div id="content">
+    <form action="/signup" method="POST">
+      <fieldset>
+        <legend>Sign Up</legend>
+        <table>
+          <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name"></td>
+          </tr>
+          <tr>
+            <td>Login:</td>
+            <td><input type="text" name="username"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Register"></td>
+          </tr>
+        </table>
+        
+      </fieldset>
+    </form>
+
+    <form action="/login" method="POST">
+      <fieldset>
+        <legend>Login</legend>
+        <table>
+          <tr>
+            <td>Login:</td>
+            <td><input type="text" name="username"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="submit" value="Login"></td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>

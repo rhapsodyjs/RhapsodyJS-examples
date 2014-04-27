@@ -1,0 +1,8 @@
+{
+  "name": "login",
+  "main": "app",
+  "dependencies": {
+    "rhapsody": ">=0.1.5",
+    "ejs": "^0.8.5"
+  }
+}
