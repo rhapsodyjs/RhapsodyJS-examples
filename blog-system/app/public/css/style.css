@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+}
+
+#content {
+  margin: 100px auto;
+  width: 300px;
+  text-align: center;
+}
+
+form {
+  margin-bottom: 30px;
+}

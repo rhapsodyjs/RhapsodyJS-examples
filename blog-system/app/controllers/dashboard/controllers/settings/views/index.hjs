@@ -1,0 +1,6 @@
+<form action="/dashboard/settings/update-name" method="POST">
+	<table>
+		<tr><td>Blog name</td><td><input type="text" name="blog-name" value="{{Blog.blogName}}"></td></tr>
+		<tr><td> </td><td><input type="submit" value="Change name"></td></tr>
+	</table>
+</form>

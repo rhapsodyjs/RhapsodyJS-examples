@@ -1,0 +1,6 @@
+{{#posts}}
+	<div class="post">
+		<b><a href="/dashboard/post/{{_id}}">{{title}}</a></b><br>
+		<i>By: {{author}}</i>
+	</div>
+{{/posts}}

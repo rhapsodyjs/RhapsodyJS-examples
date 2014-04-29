@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{Blog.blogName}}</title>
+
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/blog.css">
+
+	{{{yield-css}}}
+  	{{{yield-js}}}
+
+</head>
+<body>
+
+	<div id="content">
+		{{{yield}}}
+	</div>
+</body>
+</html>

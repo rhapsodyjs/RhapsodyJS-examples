@@ -1,0 +1,25 @@
+{{#isLogged}}
+
+<a href="/dashboard">Dashboard</a> <a href="/exit">Exit</a>
+
+{{/isLogged}}
+
+{{^isLogged}}
+
+<a href="/enter">Login</a>
+
+{{/isLogged}}
+
+{{#posts}}
+
+  <div class="post">
+    <b>{{title}}</b>
+    <p>{{{content}}}</p>
+    <i>By: {{author}}</i>
+  </div>
+
+{{/posts}}
+
+{{^posts}}
+	<h1>No posts yet.</h1>
+{{/posts}}
