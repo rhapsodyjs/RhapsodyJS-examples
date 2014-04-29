@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/dashboard.css">
+
+	{{{yield-css}}}
+  	{{{yield-js}}}
+</head>
+<body>
+	<nav>
+		<a href="/">View blog</a>
+		<a href="/dashboard">Dashboard</a>
+		<a href="/dashboard/new-post">New post</a>
+		<a href="/dashboard/posts">Posts</a>
+		<a href="/dashboard/settings">Settings</a>
+	</nav>
+
+	<div id="content">
+		{{{yield}}}
+	</div>
+</body>
+</html>

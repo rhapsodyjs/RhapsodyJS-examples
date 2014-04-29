@@ -1,0 +1,16 @@
+{{#yield-js}}
+	<script src="/js/dashboard.js" type="text/javascript"></script>
+{{/yield-js}}
+
+<div class="post">
+	<b>{{title}}</b><br>
+	<p>{{{content}}}</p>
+	<i>By: {{authorName}}</i>
+</div>
+
+<form action="/dashboard/delete-post" method="POST" onsubmit="return deletePost()">
+	<input type="hidden" name="post" value="{{id}}">
+	<input type="submit" value="Delete post">
+</form>
+
+<button onclick="window.location.href='/dashboard/edit-post/{{id}}'">Edit post</button>

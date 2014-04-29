@@ -1,0 +1,9 @@
+{
+  "name": "blog-system",
+  "main": "app",
+  "dependencies": {
+    "rhapsody": ">=0.1.5",
+    "hogan-express": "^0.5.2",
+    "async": "^0.7.0"
+  }
+}
