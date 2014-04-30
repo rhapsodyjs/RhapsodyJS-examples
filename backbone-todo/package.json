@@ -1,0 +1,8 @@
+{
+  "name": "Backbone TODO app with RhapsodyJS",
+  "main": "app",
+  "dependencies": {
+    "rhapsody": ">=0.1.6",
+    "ejs": "^0.8.5"
+  }
+}
