@@ -1,5 +1,5 @@
 {
-  "name": "Backbone TODO app with RhapsodyJS",
+  "name": "backbone-todo-rhapsodyjs",
   "main": "app",
   "dependencies": {
     "rhapsody": ">=0.1.6",
