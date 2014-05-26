@@ -22,7 +22,7 @@ var Post = {
 
 			var _ = this;
 
-			User.findOne({_id: _.author}, function(err, author) {
+			User.find(_.author, function(err, author) {
 				if(err || !author) {
 					callback('');
 				}

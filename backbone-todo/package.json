@@ -2,7 +2,8 @@
   "name": "backbone-todo-rhapsodyjs",
   "main": "app",
   "dependencies": {
-    "rhapsody": ">=0.1.6",
-    "ejs": "^0.8.5"
+    "ejs": "^0.8.5",
+    "jugglingdb-mongodb": "0.0.4-3",
+    "rhapsody": ">=0.2.0"
   }
 }

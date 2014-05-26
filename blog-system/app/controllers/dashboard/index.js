@@ -55,7 +55,7 @@ var DashboardController = {
       action: function(req, res) {
         var Post = Rhapsody.requireModel('Post');
 
-        Post.findOne({_id: req.params.post}, function(err, post) {
+        Post.find(req.params.post, function(err, post) {
           if(err || !post) {
             res.send('Post not found');
           }
@@ -86,12 +86,19 @@ var DashboardController = {
         content: req.body.content
       };
 
-      Post.update({_id: req.body.post}, dataToUpdate, function(err, post) {
+      Post.find(req.body.post, function(err, post) {
         if(err || !post) {
           res.send('Post not found');
         }
         else {
-          res.redirect('/dashboard/post/' + req.body.post);
+          post.updateAttributes(dataToUpdate, function(err) {
+            if(!err) {
+              res.redirect('/dashboard/post/' + req.body.post);
+            }
+            else {
+              res.send(500);
+            }
+          });
         }
       });
     },
@@ -99,12 +106,12 @@ var DashboardController = {
     'post:delete-post': function(req, res) {
       var Post = Rhapsody.requireModel('Post');
 
-      Post.findOne({_id: req.body.post}, function(err, post) {
+      Post.find(req.body.post, function(err, post) {
         if(err || !post) {
           res.send('Post not found');
         }
         else {
-          post.remove();
+          post.destroy();
           res.redirect('/dashboard/posts');
         }
       });
@@ -113,7 +120,7 @@ var DashboardController = {
     posts: function(req, res) {
       var Post = Rhapsody.requireModel('Post');
 
-      Post.find({}, function(err, posts) {
+      Post.all(function(err, posts) {
         if(err) {
           Rhapsody.log.error(err);
           res.send('Error');
@@ -149,7 +156,7 @@ var DashboardController = {
       action: function(req, res) {
         var Post = Rhapsody.requireModel('Post');
 
-        Post.findOne({_id: req.params.post}, function(err, post) {
+        Post.find(req.params.post, function(err, post) {
           if(err || !post) {
             res.send('Post not found');
           }

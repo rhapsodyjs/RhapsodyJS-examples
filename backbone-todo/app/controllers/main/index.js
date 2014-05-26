@@ -7,7 +7,7 @@ var MainController = {
 
       var Item = Rhapsody.requireModel('Item');
 
-      Item.find({}, function(err, items) {
+      Item.all(function(err, items) {
         if(err) {
           res.send('Database error');
         }
@@ -18,7 +18,7 @@ var MainController = {
           items = (_.isArray(items) ? items : [items]);
 
           var filteredItems = _.map(items, function(item) {
-            return _.pick(item, ['title', 'complete', '_id']);
+            return _.pick(item, ['title', 'complete', 'id']);
           });
 
           res.view({

@@ -11,7 +11,7 @@ module.exports = function(rhapsodyApp, done) {
 
   global.Blog = {};
 
-  Settings.find({}, function(err, settings) {
+  Settings.all(function(err, settings) {
   	if(err || !settings) {
   		rhapsodyApp.log.error(err);
   	}

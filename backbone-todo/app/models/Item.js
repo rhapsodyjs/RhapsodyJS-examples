@@ -5,18 +5,17 @@ var Item = {
 		},
 		complete: {
 			type: Boolean,
-      'default': false
+			'default': false
 		}
 	},
 	sharedMethods: {
-    toggle: function() {
-      this.set('complete', !this.get('complete'));
-      this.save();
-    }
-  },
+	},
 	clientMethods: {
-    
-  },
+		toggle: function() {
+			this.set('complete', !this.get('complete'));
+			this.save();
+		}
+	},
 	serverMethods: {},
 	options: {
 		allowREST: true,

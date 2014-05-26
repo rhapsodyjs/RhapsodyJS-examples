@@ -2,8 +2,9 @@
   "name": "blog-system",
   "main": "app",
   "dependencies": {
-    "rhapsody": ">=0.1.5",
+    "async": "^0.7.0",
     "hogan-express": "^0.5.2",
-    "async": "^0.7.0"
+    "jugglingdb-mongodb": "0.0.4-3",
+    "rhapsody": ">=0.2.0"
   }
 }

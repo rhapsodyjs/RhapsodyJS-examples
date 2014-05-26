@@ -19,12 +19,7 @@ module.exports = {
 
   database: {
     enabled: true,
-    host: 'localhost',
-    port: 27017,
-    name: 'rhapsodyBlog',
-    username: undefined,
-    password: undefined,
-    mongoOptions: {}
+    defaultAdapter: 'mongodb'
   },
   
   log: {

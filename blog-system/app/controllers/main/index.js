@@ -13,7 +13,7 @@ var MainController = {
 
         var Post = Rhapsody.requireModel('Post');
 
-        Post.find({}, function(err, posts) {
+        Post.all(function(err, posts) {
           if(err) {
             Rhapsody.log.error(err);
             res.send('Error');
@@ -53,7 +53,7 @@ var MainController = {
 
     		var User = Rhapsody.requireModel('User');
 
-    		User.findOne({username: username}, function(err, user) {
+    		User.findOne({ where: { username: username } }, function(err, user) {
     			if(err || !user) {
     				res.redirect('/');
     			}
